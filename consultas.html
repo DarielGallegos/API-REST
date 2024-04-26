@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSULTAS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+</head>
+<body >
+
+  <!----------------inicio del nav----------->
+  <nav class="menu">
+    <section class="menu__container">
+        <h1 class="menu__logo">Clinica</h1>
+
+        <ul class="menu__links">
+            <li class="menu__item">
+                <a href="../" class="menu__link">Home</a>
+            </li>
+
+            <li class="menu__item menu__item--show">
+                <a href="#" class="menu__link">Consultar Datos<img src="assets/arrow.svg" class="menu__arrow"></a>
+
+                <ul class="menu__nesting">
+                    <li class="menu__inside">
+                        <a href="medicamentos.html" class="menu__link menu__link--inside">Tabla Medicamentos</a>
+                    </li>
+                    <li class="menu__inside">
+                        <a href="pacientes.html" class="menu__link menu__link--inside">Tabla Pacientes</a>
+                    </li>
+                    <li class="menu__inside">
+                        <a href="especialidades.html" class="menu__link menu__link--inside">Tabla Especialidades</a>
+                    </li>
+              <li class="menu__inside">
+                        <a href="horarios.html" class="menu__link menu__link--inside">Tabla Horarios</a>
+                    </li>
+                 <li class="menu__inside">
+                        <a href="doctores.html" class="menu__link menu__link--inside">Tabla Doctores</a>
+                    </li>
+              <li class="menu__inside">
+                        <a href="consultas.html" class="menu__link menu__link--inside">Tabla Consultas</a>
+                    </li>
+              <li class="menu__inside">
+                        <a href="clinica.html" class="menu__link menu__link--inside">Tabla Clinica</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <div class="menu__hamburguer">
+            <img src="assets/menu.svg" class="menu__img">
+        </div>
+    </section>
+
+  
+</nav>
+<!----------------fin del nav----------->
+
+    <div class="container-fluid">
+        <h3 class="text-center pt-3 text-dark" style="background-color: #ffffff;">MÓDULO DE CONSULTAS</h3>
+        <hr>
+        <div class="row">
+    <div class="container-fluid col-4" >        
+        <div class="container shadow p-3 mb-5 bg-body rounded" style="border-collapse: collapse; width: 100%; border: 1px solid grey; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background: linear-gradient(to bottom, #ffffff, #f1f1f1);">
+            <h5 class="text-center text-white py-2" style="background-color: rgb(24,96,155);">Ingreso de Consultas</h5>
+            <div class="row">
+              <div class="col-6">
+                <label style="font-weight: bold;">Clinica</label><br>
+                <select name="clinica" class="form-control" id="clinicaField">
+                </select>               
+              </div>
+              <div class="col-6">
+                <label style="font-weight: bold;">Doctor</label><br>
+                <select name="doctor" class="form-control" id="doctorField">
+                </select>            
+                <br>
+              </div>
+             
+              </div>
+            <div class="row">
+              <div class="col-6">
+                <label style="font-weight: bold;">Pacientes</label><br>
+                <select name="paciente" class="form-control" id="pacienteField">
+                </select>            
+              </div>
+              <div class="col-6">
+                <label style="font-weight: bold;">Horarios</label><br>
+                <select name="horario" class="form-control" id="horarioField">
+                </select><br>             
+              </div>
+             
+              <div class="col-6">
+                <label style="font-weight: bold;">Estado</label><br>
+                <input type="text" class="form-control" id="condicion-field"><br>             
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-12">
+                
+                  <label style="font-weight: bold;">Razón de visita</label><br>
+                  <textarea class="form-control" id="razon-field"></textarea>
+                
+              </div>
+            </div>
+
+            <div style="align-content: center; margin-left: 40%;">
+            <button class="btn btn-success text-center mt-3" style="font-weight: bold;" id="btnRegister">Guardar</button>
+        </div>
+        </div>
+    </div>
+    <div class="container-fluid col-8">
+        <div class="container shadow p-3 mb-5 bg-body rounded table-responsive"  style="border-collapse: collapse; width: 100%; border: 1px solid grey; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background: linear-gradient(to bottom, #ffffff, #f1f1f1); height: 500px;">
+            <table class="table table-condensed table-hover table-stripped table-responsive" >
+                <thead class="text-white" >
+                  <tr>
+                    <th style="background-color: rgb(24,96,155);" class="text-white">ACCIONES</th>
+                    <th style="background-color: rgb(24,96,155);" class="text-white">ID</th>
+                    <th style="background-color: rgb(24,96,155);" class="text-white">CONDICIÓN</th>
+                    <th style="background-color: rgb(24,96,155);" class="text-white">RAZON</th>                    
+                    <th style="background-color: rgb(24,96,155);" class="text-white">DOCTOR</th>
+                    <th style="background-color: rgb(24,96,155);" class="text-white">PACIENTE</th>     
+                    <th style="background-color: rgb(24,96,155);" class="text-white">ESTADO</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyTable">
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+
+<!----------------inicio del modal----------->
+<div class="modal" tabindex="-1" id="ventana">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">ACTUALIZAR PACIENTE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="container p-3">
+              <input type="hidden" id="consulta_id">
+              <label class="text-dark">Numero de Clinica</label><br><br>
+              <select name="clinicaUpt" class="form-control" id="uptNumClinica"></select><br>
+              <label class="text-dark">Doctor</label><br><br>
+              <select name="doctorUpt" class="form-control" id="uptIdDoctor"></select><br>
+              <label class="text-dark">Paciente</label><br><br>
+              <select name="pacienteUpt" class="form-control" id="uptIdPaciente"></select><br> 
+              <label class="text-dark">Horario Atencion</label><br><br>
+              <select name="horarioUpt" class="form-control" id="uptHorario"></select><br> 
+              <label class="text-dark">Estado</label><br><br>
+              <input type="text" class="form-control" id="uptEstado"><br> 
+              <label class="text-dark">Razón de la visita</label><br><br>
+              <textarea class="form-control" id="uptRazonVisita"></textarea><br>  
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="botonEditar">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!----------------fin del modal----------->
+
+</body>
+</html>  
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/restConsulta/consultas.js"></script>
+<script src="js/restConsulta/doctor.js"></script>
+<script src="js/restConsulta/clinica.js"></script>
+<script src="js/restConsulta/paciente.js"></script>
+<script src="js/restConsulta/horario.js"></script>
